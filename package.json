@@ -5,10 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "buildLinux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds",
-    "buildWindows": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
-    "buildMac": "electron-packager . electron-tutorial-app --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
-    "build": "npm run buildLinux && npm run buildWindows && npm run buildMac"
+    "buildLinux": "electron-packager . --overwrite --asar --platform=linux --arch=x64 --prune=true --out=dist",
   },
   "repository": "https://github.com/CodeDraken/electron-todo",
   "keywords": [

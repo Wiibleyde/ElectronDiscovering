@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "buildLinux": "electron-packager . --overwrite --asar --platform=linux --arch=x64 --prune=true --out=dist"
+    "build": "electron-packager . --overwrite --asar --platform=linux --arch=x64 --prune=true --out=dist"
   },
   "repository": "https://github.com/CodeDraken/electron-todo",
   "keywords": [

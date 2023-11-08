@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-  # Build electron app on linux
   build_on_linux:
     runs-on: ubuntu-latest
     steps:
@@ -17,11 +16,41 @@ jobs:
           npm install
       - name: Build electron app
         run: |
-          npm run build
+          npm run buildLinux
       - name: Archive build
         uses: actions/upload-artifact@v2
         with:
-          name: build
-          path: dist
+          name: buildLinux
+          path: distLinux
 
-          
+  build_on_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Build electron app
+        run: |
+          npm run buildWindows
+      - name: Archive build
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildWindows
+          path: distWindows
+
+  build_on_mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Build electron app
+        run: |
+          npm run buildMac
+      - name: Archive build
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildMac
+          path: distMac

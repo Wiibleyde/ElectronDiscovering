@@ -39,7 +39,7 @@ jobs:
           name: buildWindows
           path: distWindows
 
-  build_on_mac:
+  build_on_mac_x64:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -48,9 +48,25 @@ jobs:
           npm install
       - name: Build electron app
         run: |
-          npm run buildMac
+          npm run buildMac64
       - name: Archive build
         uses: actions/upload-artifact@v2
         with:
-          name: buildMac
-          path: distMac
+          name: buildMac64
+          path: distMac64
+
+  build_on_mac_arm64:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Build electron app
+        run: |
+          npm run buildMacARM
+      - name: Archive build
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildMacARM
+          path: distMacARM

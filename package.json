@@ -7,8 +7,9 @@
     "start": "electron .",
     "buildLinux": "electron-packager . --overwrite --platform=linux --arch=x64 --prune=true --out=distLinux",
     "buildWindows": "electron-packager . electron-todo --overwrite --platform=win32 --arch=ia32 --prune=true --out=distWindows",
-    "buildMac": "electron-packager . electron-todo --overwrite --platform=darwin --arch=x64 --prune=true --out=distMac",
-    "build": "npm run buildLinux && npm run buildWindows && npm run buildMac"
+    "buildMac64": "electron-packager . electron-todo --overwrite --platform=darwin --arch=x64 --prune=true --out=distMac64",
+    "buildMacARM": "electron-packager . electron-todo --overwrite --platform=darwin --arch=arm64 --prune=true --out=distMacARM",
+    "build": "npm run buildLinux && npm run buildWindows && npm run buildMac64 && npm run buildMacARM"
   },
   "repository": "https://github.com/CodeDraken/electron-todo",
   "keywords": [
